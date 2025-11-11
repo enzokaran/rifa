@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifa Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="home" class="page active">
+            <h1>Rifa Online</h1>
+            <p>Valor por número: R$ 0,01</p>
+            <button onclick="showPage('register')">Cadastrar</button>
+            <button onclick="showPage('login')">Login</button>
+        </div>
+        <div id="register" class="page">
+            <h2>Cadastro</h2>
+            <form id="registerForm">
+                <input type="text" id="regName" placeholder="Nome" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Senha" required>
+                <input type="tel" id="regPhone" placeholder="Telefone" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <button onclick="showPage('home')">Voltar</button>
+        </div>
+        <div id="login" class="page">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="logEmail" placeholder="Email" required>
+                <input type="password" id="logPassword" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <button onclick="showPage('home')">Voltar</button>
+        </div>
+        <div id="numbers" class="page">
+            <h2>Escolha um Número (1-100)</h2>
+            <div id="numberGrid"></div>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div id="payment" class="page">
+            <h2>Pagamento</h2>
+            <p>Número selecionado: <span id="selectedNumber"></span></p>
+            <p>Valor: R$ 0,01</p>
+            <p>PIX: 15271483940</p>
+            <p>Envie o valor via PIX e confirme abaixo.</p>
+            <button onclick="confirmPurchase()">Confirmar Compra</button>
+            <button onclick="showPage('numbers')">Voltar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
